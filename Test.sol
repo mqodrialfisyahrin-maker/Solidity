@@ -12,6 +12,6 @@ contract test{
 
     function setPesan(string memory _baru) public {
         pesan = _baru;
-}
+    }
 
 }
