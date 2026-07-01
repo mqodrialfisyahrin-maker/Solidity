@@ -1,5 +1,5 @@
 
-# Solidity
+# Solidity 💻
 
 Repository for learning smart contract development.
 
@@ -18,6 +18,7 @@ journey to becoming a smart contract developer.
 
 ## Files
 - `Test.sol` — first practice, simple set & get string function
+- `balance.sol` — practice uint, internal visibility, balance tracking
 
 ## Tools
 - Solidity
