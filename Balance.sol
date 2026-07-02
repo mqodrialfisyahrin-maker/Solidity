@@ -3,20 +3,28 @@
 pragma solidity ^0.8.2;
 
 contract balance{
-   uint internal  wallet1;
-   uint internal  wallet2;
-   uint public TotalBalance;
+   mapping (address => uint) public balances;
 
- function total() public view returns (uint) {
-    return TotalBalance;
- }
- 
- function Receive(uint amount1,uint amount2)public {
-    wallet1 += amount1;
-    wallet2 += amount2;
+   uint public totalBalance;
 
-    TotalBalance = wallet1 + wallet2;
+   function receiveMoney(uint amount) public {
+      balances[msg.sender] += amount;
+      totalBalance += amount;
+   }
 
- }
+   function transfer(address to,uint amount) public {
+      require(balances[msg.sender] >= amount,"your balance is insufficient");
+
+      require(to != address(0),"invalid addresss");
+
+
+      balances[msg.sender] -= amount;
+      balances[to] += amount;
+   }
+
+  function checkMyBalance() public view returns (uint) {
+   return balances[msg.sender];
+  }
+
 
 }
