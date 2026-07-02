@@ -13,9 +13,9 @@ contract balance{
    }
 
    function transfer(address to,uint amount) public {
-      require(balances[msg.sender] >= amount,"your balance is insufficient");
+      require(balances[msg.sender] >= amount,"your balance is insufficient!");
 
-      require(to != address(0),"invalid addresss");
+      require(to != address(0),"invalid address!");
 
 
       balances[msg.sender] -= amount;
